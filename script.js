@@ -15,3 +15,27 @@ let users = [
 {"first_name":"Montague","email":"mladlow9@bbb.org","student_course":"Veribet"}
 
 ]
+
+const createTableRows = () => {
+    const tableBody = document.getElementById('studentsTableBody');
+
+    users.forEach(student => {
+        const row = document.createElement('tr');
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = student.first_name;
+        row.appendChild(nameCell);
+
+        const emailCell = document.createElement('td');
+        emailCell.textContent = student.email;
+        row.appendChild(emailCell);
+
+        const courseCell = document.createElement('td');
+        courseCell.textContent = student.student_course;
+        row.appendChild(courseCell);
+
+        tableBody.appendChild(row);
+    });
+}
+
+createTableRows();
