@@ -44,6 +44,34 @@ const createTableRows = () => {
 createTableRows();
 
 
+// nichita
+const searchField = document.getElementById('searchField');
+const tableRows = document.getElementById('studentsTableBody').getElementsByTagName('tr');
+const searchBtn = document.getElementById('searchBtn');
+
+const searchByName = function () {
+    const searchTerm = searchField.value.toLowerCase();
+
+    for (let i = 0; i < tableRows.length; i++) {
+        const cells = tableRows[i].getElementsByTagName("td");
+
+        const nameCell = cells[0];
+
+        if (nameCell) {
+            const nameText = nameCell.textContent.toLowerCase();
+
+            if (searchTerm === '' || nameText.includes(searchTerm)) {
+                tableRows[i].style.backgroundColor = searchTerm === '' ? 'transparent' : 'yellow';
+            } else {
+                tableRows[i].style.backgroundColor = 'transparent';
+            }
+        }
+    }
+};
+
+
+searchBtn.addEventListener("click", searchByName);
+=======
 
 
 
@@ -95,3 +123,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+
