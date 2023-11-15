@@ -47,7 +47,7 @@ createTableRows();
   const searchField = document.getElementById('searchField');
   const searchBtn = document.getElementById('searchBtn');
 
-  const searchByNameOrEmailOrCourse = function () {
+  const searchByNameOrEmailOrCourse = () => {
       const searchTerm = searchField.value.toLowerCase();
 
       for (let i = 0; i < tableRows.length; i++) {
