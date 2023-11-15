@@ -47,6 +47,10 @@ createTableRows();
   const searchField = document.getElementById('searchField');
   const searchBtn = document.getElementById('searchBtn');
 
+const tableRows = document.getElementsByTagName("tr");
+  const searchField = document.getElementById('searchField');
+  const searchBtn = document.getElementById('searchBtn');
+
   const searchByNameOrEmailOrCourse = () => {
       const searchTerm = searchField.value.toLowerCase();
 
@@ -62,7 +66,7 @@ createTableRows();
               const emailText = emailCell.textContent.toLowerCase();
               const courseText = courseCell.textContent.toLowerCase();
 
-              if ( searchTerm === '' || nameText.includes(searchTerm) || emailText.includes(searchTerm) || courseText.includes(searchTerm)) {
+              if ( searchTerm === '' || nameText.includes(searchTerm) ||  emailText.includes(searchTerm) || courseText.includes(searchTerm)) {
                   tableRows[i].style.backgroundColor = searchTerm === '' ? 'transparent' : 'yellow'; // Highlighting rows that match name, email, or course
               } 
           }
@@ -70,5 +74,4 @@ createTableRows();
   };
 
   searchBtn.addEventListener("click", searchByNameOrEmailOrCourse);
-
 
